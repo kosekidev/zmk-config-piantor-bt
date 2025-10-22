@@ -16,13 +16,15 @@
 
 / {
     behaviors {
-        hold_tap: hold_tap {
+        short_mo_kp: short_mo_kp {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_TAP";
-            bindings = <&kp>, <&kp>;
+            label = "SHORT_MO_KP";
+            bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <130>;
+            tapping-term-ms = <90>;
+            hold-while-undecided;
+            hold-while-undecided-linger;
         };
     };
 
@@ -48,7 +50,7 @@
             //                    | GUI | LWR | SPC | ENT | RSE  | ALT |
 
             bindings = <
-  &mt LEFT_ALT FR_SEMICOLON  &mt LEFT_CONTROL FR_COMMA  &lt 4 FR_PERIOD  &kp FR_P  &kp FR_Y  &kp FR_F  &kp FR_G  &kp FR_C  &kp FR_R  &mt LEFT_ALT FR_L      &kp FR_A  &kp FR_O  &kp FR_E  &kp FR_U  &kp FR_I  &kp FR_D  &kp FR_H  &kp FR_T  &kp FR_N  &kp FR_S      &mt LEFT_GUI FR_COLON  &kp FR_Q  &kp FR_J  &kp FR_K  &kp FR_X  &kp FR_B  &kp FR_M  &kp FR_W  &kp FR_V  &mt LEFT_GUI FR_Z    &mo 3  &lt 1 ESC  &kp LEFT_SHIFT  &lt 5 RET  &mt LEFT_CONTROL FR_SPACE  &mo 2
+  &mt LEFT_ALT FR_SEMICOLON  &mt LEFT_CONTROL FR_COMMA  &lt 4 FR_PERIOD  &kp FR_P  &kp FR_Y  &kp FR_F  &kp FR_G  &kp FR_C  &kp FR_R  &mt LEFT_ALT FR_L      &kp FR_A  &kp FR_O  &kp FR_E  &kp FR_U  &kp FR_I  &kp FR_D  &kp FR_H  &kp FR_T  &kp FR_N  &kp FR_S      &mt LEFT_GUI FR_COLON  &kp FR_Q  &kp FR_J  &kp FR_K  &kp FR_X  &kp FR_B  &kp FR_M  &kp FR_W  &kp FR_V  &mt LEFT_GUI FR_Z    &mo 3  &short_mo_kp 1 ESC  &kp LEFT_SHIFT  &lt 5 RET  &mt LEFT_CONTROL FR_SPACE  &mo 2
             >;
         };
 
